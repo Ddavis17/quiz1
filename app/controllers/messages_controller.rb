@@ -1,9 +1,14 @@
 class MessagesController < ApplicationController
-  def new 
+  def index 
+    @message = Message.all
+  end 
+
+  def new
     @message = Message.new
   end
 
   def show
+    @message = Message.new
   end
 
   def create
@@ -14,6 +19,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(:message)
+    params.require(:message).permit(:message)
   end
 end

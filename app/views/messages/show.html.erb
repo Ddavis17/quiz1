@@ -1,0 +1,48 @@
+<head>
+  <title>STOP</title>
+     
+      
+
+</head
+<body>
+
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <form class="contact100-form validate-form">
+        <h1 class="text-center">STOP RIGHT THERE</h1>
+
+        <br>
+        <hr>
+        <center>
+          <%= image_tag image_url ("stop.jpg") %>
+        </center>
+        <br>
+        <h1 class="text-center"> YOU ARE GORGEOUS. </h1>
+
+        <span class="contact100-form-title">
+          Tell Us How You Do it:
+        </span>
+
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+          <span class="label-input100">Your Advice To Look Gorgeous👇 <hr /></span>
+          
+        </div>
+
+        <%= simple_form_for @message do |f| %>
+        <%= f.input :message %>
+        <br />
+        <%= f.submit 'Create', class: 'btn btn-danger' %>
+      <% end %>
+
+      <p> <strong> Here is you're awesome advice: </strong> </p>
+      <hr />
+
+        <% Message.all.each do |message| %>
+          <p><%= message.message %></p>
+        <% end %>
+
+        
+      </form>
+    </div>
+  </div>
+</body>

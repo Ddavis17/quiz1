@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   validates :message, presence: true
   def index
-    @message = Message
+    @message = Message.all
   end
 
   def new
